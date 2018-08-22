@@ -27,11 +27,12 @@
 		<jackson.kotlin.version>2.9.6</jackson.kotlin.version>
     </properties>
 	
-	<!--modules>
+	<modules>
+        <!--module>discovery-server</module>
         <module>discovery-server</module>
-		<module>api-gateway</module>
-		<module>hystrix-dashboard</module>
-    </modules-->
+		<module>api-gateway</module-->
+		<module>cadastro-service</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -59,6 +60,12 @@
 				<groupId>com.fasterxml.jackson.module</groupId>
 				<artifactId>jackson-module-kotlin</artifactId>
 				<version>${jackson.kotlin.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
 			</dependency>
 		
         </dependencies>
