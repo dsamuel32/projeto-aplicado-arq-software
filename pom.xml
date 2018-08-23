@@ -28,9 +28,7 @@
     </properties>
 	
 	<modules>
-        <!--module>discovery-server</module>
-
-		<module>api-gateway</module-->
+        <module>api-gateway</module>
 		<module>discovery-server</module>
 		<module>cadastro-service</module>
 		<module>comum</module>
