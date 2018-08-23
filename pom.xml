@@ -32,10 +32,17 @@
         <module>discovery-server</module>
 		<module>api-gateway</module-->
 		<module>cadastro-service</module>
+		<module>comum</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+
+			<dependency>
+				<groupId>br.com.projetoaplicado</groupId>
+				<artifactId>comum</artifactId>
+				<version>${project.version}</version>
+			</dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
