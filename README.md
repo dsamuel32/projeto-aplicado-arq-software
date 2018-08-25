@@ -12,6 +12,7 @@ Demostrar uma arquitetura escalavél de micro serviços utilizando:
 - Kotlin
 - MongoDB
 - Swagger
+- Docker
 
 ### Diagrama de Deploy
 
