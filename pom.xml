@@ -31,6 +31,10 @@
         <module>api-gateway</module>
 		<module>discovery-server</module>
 		<module>cadastro-service</module>
+        <module>agendamento-service</module>
+        <module>notificacao-service</module>
+        <module>pagamento-service</module>
+        <module>relatorio-service</module>
 		<module>comum</module>
     </modules>
 

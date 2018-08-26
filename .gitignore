@@ -25,3 +25,5 @@ hs_err_pid*
 .idea
 target
 *.iml
+documentos/*.vpp.bak_*
+documentos/*.vpp.lck
