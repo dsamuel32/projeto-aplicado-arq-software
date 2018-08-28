@@ -1,17 +1,17 @@
 package br.com.projetoaplicado.agendamento.servico
 
-import br.com.projetoaplicado.agendamento.dominio.AgendamentoDTO
+import br.com.projetoaplicado.agendamento.dominio.Agendamento
 
 interface AgendamentoService {
 
-    fun getAgendamentos() : List<AgendamentoDTO>
+    fun getAgendamentos() : List<Agendamento>
 
-    fun getAgendamentosPorId(id: Long): List<AgendamentoDTO>
+    fun getAgendamentosPorId(id: String): Agendamento
 
-    fun agendar(agendamentoDTO: AgendamentoDTO) : AgendamentoDTO
+    fun agendar(agendamentoDTO: Agendamento) : Agendamento
 
-    fun atualizar(agendamentoDTO: AgendamentoDTO) : AgendamentoDTO
+    fun atualizar(agendamentoDTO: Agendamento) : Agendamento
 
-    fun deletar(id: Long)
+    fun deletar(id: String)
 
 }
