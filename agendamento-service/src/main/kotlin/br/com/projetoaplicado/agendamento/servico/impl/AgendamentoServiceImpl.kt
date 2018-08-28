@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service
 @Service
 class AgendamentoServiceImpl (private val agendamentoRepository: AgendamentoRepository) : AgendamentoService {
 
-    override fun getAgendamentos(): List<Agendamento> {
-        TODO("not implemented")
-    }
+    override fun getAgendamentos(): List<Agendamento> = agendamentoRepository.findAll()
 
     override fun getAgendamentosPorId(id: String): Agendamento =
             agendamentoRepository.findById(id).orElseThrow { RuntimeException() }

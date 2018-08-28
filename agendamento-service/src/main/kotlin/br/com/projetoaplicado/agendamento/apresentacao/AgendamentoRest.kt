@@ -14,7 +14,8 @@ class AgendamentoRest (private val agendamentoService: AgendamentoService) {
 
     @GetMapping
     fun getAgendamentos(): ResponseEntity<List<Agendamento>> {
-        return ResponseEntity(null, HttpStatus.OK)
+        val agendamentos = agendamentoService.getAgendamentos()
+        return ResponseEntity(agendamentos, HttpStatus.OK)
     }
 
     @GetMapping(value = "{id}")

@@ -71,7 +71,7 @@
 				<artifactId>jackson-module-kotlin</artifactId>
 				<version>${jackson.kotlin.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
