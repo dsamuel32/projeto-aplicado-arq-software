@@ -1,3 +1,12 @@
 package br.com.projetoaplicado.cadastro.dominio
 
-data class Pessoa @JvmOverloads constructor (var nome: String = "", var sobrenome: String = "")
+import org.springframework.data.annotation.Id
+import java.util.*
+
+open class Pessoa (
+        @Id
+        var id: String = UUID.randomUUID().toString(),
+        var nome: String? = null,
+        var sobrenome: String? = null,
+        var email: String? = null
+)

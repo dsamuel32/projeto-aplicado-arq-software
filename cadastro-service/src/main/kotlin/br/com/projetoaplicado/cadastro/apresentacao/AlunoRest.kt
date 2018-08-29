@@ -1,22 +1,35 @@
 package br.com.projetoaplicado.cadastro.apresentacao
 
-import br.com.projetoaplicado.cadastro.dominio.PessoaDTO
+import br.com.projetoaplicado.cadastro.dominio.Aluno
 import br.com.projetoaplicado.cadastro.service.AlunoService
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
-import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(value = "alunos", produces = arrayOf(MediaType.APPLICATION_JSON_UTF8_VALUE))
 class AlunoRest (val alunoService: AlunoService){
 
     @GetMapping
-    fun getAlunos(): ResponseEntity<PessoaDTO> {
-        val pessoa: PessoaDTO = alunoService.getAlunos()
-        return ResponseEntity(pessoa, HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK)
+    fun getAlunos(): List<Aluno> = alunoService.getAlunos()
+
+    @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    fun getAlunosPorId(@PathVariable("id") id: String) = alunoService.getAlunosPorId(id)
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    fun salvar(@RequestBody aluno: Aluno) = alunoService.salvar(aluno)
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    fun atualizar(@RequestBody aluno: Aluno) = alunoService.salvar(aluno)
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    fun deletar(@PathVariable("id") id: String) {
+        alunoService.deletar(id)
     }
 
 }
