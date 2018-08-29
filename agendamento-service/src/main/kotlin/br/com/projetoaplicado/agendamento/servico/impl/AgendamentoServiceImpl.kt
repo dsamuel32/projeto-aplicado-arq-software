@@ -1,13 +1,15 @@
 package br.com.projetoaplicado.agendamento.servico.impl
 
 import br.com.projetoaplicado.agendamento.dominio.Agendamento
+import br.com.projetoaplicado.agendamento.integracao.ZoomApi
 import br.com.projetoaplicado.agendamento.repository.AgendamentoRepository
 import br.com.projetoaplicado.agendamento.servico.AgendamentoService
 import br.com.projetoaplicado.comum.util.exception.SemResultadoException
 import org.springframework.stereotype.Service
 
 @Service
-class AgendamentoServiceImpl (private val agendamentoRepository: AgendamentoRepository) : AgendamentoService {
+class AgendamentoServiceImpl (private val agendamentoRepository: AgendamentoRepository,
+                              private val zoomApi: ZoomApi) : AgendamentoService {
 
     override fun getAgendamentos(): List<Agendamento> = agendamentoRepository.findAll()
 
@@ -25,8 +27,11 @@ class AgendamentoServiceImpl (private val agendamentoRepository: AgendamentoRepo
     }
 
     override fun reservar(id: String, idAluno: Long): Agendamento {
+        val resposta: Map<String, Any> = zoomApi.criarReuniao()
         var agendamento = getAgendamentosPorId(id)
-        agendamento.urlAula = "https://www.google.com"
+        agendamento.urlJoinAula = resposta["join_url"] as String
+        agendamento.startUrlAula = resposta["start_url"] as String
+        agendamento.idZoom = resposta["id"] as Int
         agendamento.idAluno = idAluno
         return atualizar(agendamento)
     }

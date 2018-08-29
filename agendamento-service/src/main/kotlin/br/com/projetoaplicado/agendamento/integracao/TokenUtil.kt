@@ -8,11 +8,11 @@ import java.util.*
 
 class TokenUtil (val apiKey: String, val secret: String){
 
-    private val TEMPO_EXPIRAR: Long = 7000L;
+    private val TEMPO_EXPIRAR = 60000L
 
     fun criarJwtToken(): String {
         var now = Date()
-        val exp = now.getTime() + TEMPO_EXPIRAR
+        val exp = now.time + TEMPO_EXPIRAR
         val header = criarHeders()
         return gerarToken(header, Date(exp))
     }
@@ -26,7 +26,7 @@ class TokenUtil (val apiKey: String, val secret: String){
                     .setIssuer(apiKey)
                     .setHeader(header)
                     .setExpiration(dataExp)
-                    .signWith(SignatureAlgorithm.HS256, secret.toByteArray())
+                    .signWith(SignatureAlgorithm.HS256, secret.toByteArray(charset("UTF-8")))
         } catch (e : UnsupportedEncodingException) {
             throw RuntimeException(e);
         }

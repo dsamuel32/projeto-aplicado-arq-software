@@ -11,7 +11,9 @@ data class Agendamento (
         val id: String = UUID.randomUUID().toString(),
         var idAluno: Long? = null,
         var idProfessor: Long? = null,
-        var urlAula: String? = null,
+        var urlJoinAula: String? = null,
+        var startUrlAula: String? = null,
+        var idZoom: Int? = null,
         var data: LocalDateTime? = null,
         var disciplina: String? = null
 )

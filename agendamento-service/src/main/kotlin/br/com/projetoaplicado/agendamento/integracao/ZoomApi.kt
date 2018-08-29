@@ -1,12 +1,14 @@
 package br.com.projetoaplicado.agendamento.integracao
 
+import br.com.projetoaplicado.comum.util.exception.IntegracaoException
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.*
 import org.springframework.http.HttpStatus.*
+import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
 
-
+@Component
 class ZoomApi {
 
     @Value("\${key}")
@@ -34,7 +36,7 @@ class ZoomApi {
             }
         }
 
-        throw RuntimeException("Erro criar aula zoom")
+        throw IntegracaoException("Erro criar aula zoom")
     }
 
     private fun criarHeaders(jwt: String): HttpHeaders {
