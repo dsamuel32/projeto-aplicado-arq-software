@@ -9,8 +9,9 @@ import java.util.*
 data class Agendamento (
         @Id
         val id: String = UUID.randomUUID().toString(),
-        var idAluno: Long = -1,
-        var idProfessor: Long = -1,
-        var urlAula: String = "",
-        var data: LocalDateTime? = null
+        var idAluno: Long? = null,
+        var idProfessor: Long? = null,
+        var urlAula: String? = null,
+        var data: LocalDateTime? = null,
+        var disciplina: String? = null
 )

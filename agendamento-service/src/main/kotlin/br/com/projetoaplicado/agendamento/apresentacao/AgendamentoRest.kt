@@ -2,6 +2,7 @@ package br.com.projetoaplicado.agendamento.apresentacao
 
 import br.com.projetoaplicado.agendamento.dominio.Agendamento
 import br.com.projetoaplicado.agendamento.servico.AgendamentoService
+import org.omg.CORBA.Object
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
@@ -13,33 +14,37 @@ import org.springframework.web.bind.annotation.*
 class AgendamentoRest (private val agendamentoService: AgendamentoService) {
 
     @GetMapping
-    fun getAgendamentos(): ResponseEntity<List<Agendamento>> {
-        val agendamentos = agendamentoService.getAgendamentos()
-        return ResponseEntity(agendamentos, HttpStatus.OK)
-    }
+    @ResponseStatus(HttpStatus.OK)
+    fun getAgendamentos(): List<Agendamento> = agendamentoService.getAgendamentos()
 
     @GetMapping(value = "{id}")
-    fun getAgendamentosPorId(@PathVariable("id") id: String) : ResponseEntity<Agendamento> {
-        val agendamento = agendamentoService.getAgendamentosPorId(id)
+    @ResponseStatus(HttpStatus.OK)
+    fun getAgendamentosPorId(@PathVariable("id") id: String) : Agendamento
+            = agendamentoService.getAgendamentosPorId(id)
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    fun criar(@RequestBody agendamento: Agendamento) : Agendamento = agendamentoService.criar(agendamento)
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    fun atualizar(@RequestBody agendamento: Agendamento): Agendamento
+            = agendamentoService.atualizar(agendamento)
+
+    @PutMapping("{id}/reservar")
+    fun reservar(@PathVariable("id") id: String, @RequestBody parametro: Agendamento): ResponseEntity<Agendamento> {
+        var agendamento = agendamentoService.reservar(id, parametro.idAluno as Long)
         return ResponseEntity(agendamento, HttpStatus.OK)
     }
 
-    @PostMapping
-    fun agendar(@RequestBody agendamento: Agendamento) : ResponseEntity<Any> {
-        val agendamentoSalvo = agendamentoService.agendar(agendamento)
-        return ResponseEntity(agendamentoSalvo, HttpStatus.CREATED)
-    }
-
-    @PutMapping
-    fun atualizar(@RequestBody agendamento: Agendamento): ResponseEntity<Agendamento> {
-        val agendamentoDTOAtualizado = agendamentoService.atualizar(agendamento)
-        return ResponseEntity(agendamentoDTOAtualizado, HttpStatus.OK)
-    }
+    @PutMapping("{id}/cancelar")
+    @ResponseStatus(HttpStatus.OK)
+    fun cancelar(@PathVariable("id") id: String): Agendamento = agendamentoService.cancelar(id)
 
     @DeleteMapping(value = "{id}")
-    fun deletar(@PathVariable("id") id: String): ResponseEntity<Any> {
+    @ResponseStatus(HttpStatus.OK)
+    fun deletar(@PathVariable("id") id: String) {
         agendamentoService.deletar(id)
-        return ResponseEntity(HttpStatus.OK)
     }
 
 }

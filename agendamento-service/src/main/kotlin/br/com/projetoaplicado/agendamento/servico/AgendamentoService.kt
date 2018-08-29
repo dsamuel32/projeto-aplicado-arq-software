@@ -8,10 +8,14 @@ interface AgendamentoService {
 
     fun getAgendamentosPorId(id: String): Agendamento
 
-    fun agendar(agendamentoDTO: Agendamento) : Agendamento
+    fun criar(agendamentoDTO: Agendamento) : Agendamento
 
     fun atualizar(agendamentoDTO: Agendamento) : Agendamento
 
     fun deletar(id: String)
+
+    fun reservar(id: String, idAluno: Long): Agendamento
+
+    fun cancelar(id: String): Agendamento
 
 }
