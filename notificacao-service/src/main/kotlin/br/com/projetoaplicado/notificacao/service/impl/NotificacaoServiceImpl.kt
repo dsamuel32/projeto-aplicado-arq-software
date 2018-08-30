@@ -13,9 +13,7 @@ class NotificacaoServiceImpl (private val notificacaoRepository: NotificacaoRepo
 
     override fun getNotificacoes(): List<Notificacao> = notificacaoRepository.findAll()
 
-    override fun getNotificacoesPorStatus(status: Status): List<Notificacao> {
-        return mutableListOf()
-    }
+    override fun getNotificacoesPorStatus(status: Status): List<Notificacao> = notificacaoRepository.getNotificacoesPorStatus(status)
 
     override fun salvar(notificacao: Notificacao): Notificacao {
         return notificacaoRepository.save(notificacao)

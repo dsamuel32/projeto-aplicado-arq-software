@@ -13,11 +13,17 @@ class NotificacaoBatch (val notificacaoService: NotificacaoService,
 
     @Scheduled(fixedRate = 5000)
     fun notificar() {
-        val notificacoes: List<Notificacao> = notificacaoService.getNotificacoesPorStatus(Status.PENDENDE)
+        val pendentes: List<Notificacao> = notificacaoService.getNotificacoesPorStatus(Status.PENDENDE)
+        val comErros: List<Notificacao> = notificacaoService.getNotificacoesPorStatus(Status.COM_ERRO)
+        println("[NOTIFICACOES] PENDENTES - ${pendentes?.size}")
+        println("[NOTIFICACOES] COM ERRO  - ${comErros?.size}")
+        processarNotificacoes(pendentes)
+        processarNotificacoes(comErros)
 
+    }
+
+    private fun processarNotificacoes(notificacoes: List<Notificacao>) {
         for (notificacao in notificacoes) {
-
-
             try {
                 notificacaoStrategy.notificar(notificacao)
                 notificacao.status = Status.ENVIADO
@@ -27,7 +33,6 @@ class NotificacaoBatch (val notificacaoService: NotificacaoService,
                 notificacao.mensagensErros.lastIndexOf(e.message)
             }
             notificacaoService.salvar(notificacao)
-
         }
     }
 }

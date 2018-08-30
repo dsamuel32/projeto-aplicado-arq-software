@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 class NotificacaoSMSComponent : NotificacaoComponent {
 
     override fun notificar(notificacao: Notificacao) {
-        println("Notificando por SMS destinatario id: ${notificacao.destinatario?.id} - email ${notificacao.destinatario?.telefone}")
+        println("Notificando por SMS destinatario id: ${notificacao.destinatario?.id} - telefone ${notificacao.destinatario?.telefone}")
     }
 
 }

@@ -14,9 +14,10 @@ class NotificacaoStrategy (private val notificacaoSMSComponent: NotificacaoSMSCo
 
         if (notificaoComponent != null) {
             notificaoComponent.notificar(notificacao)
+        } else {
+            throw ErroNotificacaoException("Erro procurar notificador")
         }
 
-        throw ErroNotificacaoException("Erro procurar notificador")
     }
 
     private fun getNotificador(tipoNotificacao: TipoNotificacao) : NotificacaoComponent {
