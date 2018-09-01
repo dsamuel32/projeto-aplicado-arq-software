@@ -4,12 +4,14 @@ import br.com.projetoaplicado.comum.util.exception.SemResultadoException
 import br.com.projetoaplicado.pagamento.dominio.Pagamento
 import br.com.projetoaplicado.pagamento.dominio.Status
 import br.com.projetoaplicado.pagamento.dominio.TipoPagamento
+import br.com.projetoaplicado.pagamento.integracao.BrasPagApi
 import br.com.projetoaplicado.pagamento.repository.PagamentoRepository
 import br.com.projetoaplicado.pagamento.service.PagamentoService
 import org.springframework.stereotype.Service
 
 @Service
-class PagamentoServiceImpl (val paramentoRepository: PagamentoRepository) : PagamentoService {
+class PagamentoServiceImpl (val paramentoRepository: PagamentoRepository,
+                            val brasPagApi: BrasPagApi) : PagamentoService {
 
 
     override  fun getPagamentos(): List<Pagamento> = paramentoRepository.findAll()
@@ -20,7 +22,7 @@ class PagamentoServiceImpl (val paramentoRepository: PagamentoRepository) : Paga
     override fun salvar(tipo: String, pagamento: Pagamento): Pagamento {
        val tipoPagamento = TipoPagamento.valueOf(tipo)
         pagamento.tipoPagamento = tipoPagamento
-
+        brasPagApi.pagarCartaoCredito(pagamento)
         return salvar(pagamento)
     }
 
