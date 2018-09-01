@@ -11,7 +11,7 @@ data class Notificacao (
         var tipoNotificacao: TipoNotificacao = TipoNotificacao.EMAIL,
         var tentativas: Int = 0,
         var destinatario: Destinatario? = null,
-        var status: Status = Status.PENDENDE,
+        var status: Status = Status.PENDENTE,
         var mensagensErros: List<String> = mutableListOf(),
         var idAgendamento: String? = null,
         var idPagamento: String? = null

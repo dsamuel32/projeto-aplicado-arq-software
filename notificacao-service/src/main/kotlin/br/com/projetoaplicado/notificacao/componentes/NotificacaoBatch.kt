@@ -13,7 +13,7 @@ class NotificacaoBatch (val notificacaoService: NotificacaoService,
 
     @Scheduled(fixedRate = 5000)
     fun notificar() {
-        val pendentes: List<Notificacao> = notificacaoService.getNotificacoesPorStatus(Status.PENDENDE)
+        val pendentes: List<Notificacao> = notificacaoService.getNotificacoesPorStatus(Status.PENDENTE)
         val comErros: List<Notificacao> = notificacaoService.getNotificacoesPorStatus(Status.COM_ERRO)
         println("[NOTIFICACOES] PENDENTES - ${pendentes?.size}")
         println("[NOTIFICACOES] COM ERRO  - ${comErros?.size}")
