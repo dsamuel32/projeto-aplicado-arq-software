@@ -16,5 +16,6 @@ data class Pagamento (
         var status: Status = Status.AGUARDANDO_PAGAMENTO,
         var localDateTime: LocalDateTime = LocalDateTime.now(),
         var urlBoleto: String? = null,
-        var cartao: Cartao? = null
+        var cartao: Cartao? = null,
+        var idBaspag: String? = null
 )

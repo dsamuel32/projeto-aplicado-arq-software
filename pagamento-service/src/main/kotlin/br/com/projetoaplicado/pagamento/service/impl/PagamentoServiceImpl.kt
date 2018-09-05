@@ -22,7 +22,7 @@ class PagamentoServiceImpl (val paramentoRepository: PagamentoRepository,
     override fun salvar(tipo: String, pagamento: Pagamento): Pagamento {
        val tipoPagamento = TipoPagamento.valueOf(tipo)
         pagamento.tipoPagamento = tipoPagamento
-        brasPagApi.pagarCartaoCredito(pagamento)
+        pagamento.idBaspag = brasPagApi.pagarCartaoCredito(pagamento)
         return salvar(pagamento)
     }
 
