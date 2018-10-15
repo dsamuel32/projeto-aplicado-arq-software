@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-mongo-db:
+    container_name: projeto-aplicado-mongo-db
+    image: projeto-aplicado-mongo-db
+    build: .
+    ports:
+      - "27017:27017"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"
