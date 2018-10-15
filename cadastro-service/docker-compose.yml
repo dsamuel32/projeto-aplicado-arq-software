@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-cadastro-service:
+    container_name: projeto-aplicado-cadastro-service
+    image: projeto-aplicado-cadastro-service
+    build: .
+    ports:
+      - "8083:8083"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"

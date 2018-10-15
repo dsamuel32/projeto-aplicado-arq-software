@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-discovery-server:
+    container_name: projeto-aplicado-discovery-server
+    image: projeto-aplicado-discovery-server
+    build: .
+    ports:
+      - "8081:8081"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"

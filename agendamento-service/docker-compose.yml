@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-agendamento-service:
+    container_name: projeto-aplicado-agendamento-service
+    image: projeto-aplicado-agendamento-service
+    build: .
+    ports:
+      - "8084:8084"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"

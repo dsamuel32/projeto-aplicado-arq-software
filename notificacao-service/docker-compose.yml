@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-notificacao-service:
+    container_name: projeto-aplicado-notificacao-service
+    image: projeto-aplicado-notificacao-service
+    build: .
+    ports:
+      - "8085:8085"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"
