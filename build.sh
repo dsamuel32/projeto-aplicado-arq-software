@@ -1,0 +1,21 @@
+#!/bin/bash
+cd agendamento-service
+mvn dockerfile:build
+cd ..
+cd api-gateway
+mvn dockerfile:build
+cd ..
+cd cadastro-service
+mvn dockerfile:build
+cd ..
+cd discovery-server
+mvn dockerfile:build
+cd ..
+cd notificacao-service
+mvn dockerfile:build
+cd ..
+cd pagamento-service
+mvn dockerfile:build
+cd ..
+cd relatorio-service
+mvn dockerfile:build
