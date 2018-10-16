@@ -14,6 +14,11 @@ Demostrar uma arquitetura escalavél de micro serviços utilizando:
 - Swagger
 - Docker
 
+### Requisitos
+ - Docker
+ - JDK 8
+ - Maven
+
 ### Primeiros passos
  - Criar network dos containers
 
@@ -37,9 +42,9 @@ build.sh
 ```
 build.sh
 ```
-
-### Visão geral
-### Diagrama de Deploy
+### Arquitetura
+ -### Visão geral
+ -### Diagrama de Deploy
 ![Diagrama de Deploy](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/deploy.jpg)
-### Diagrama de Componentes
+ -### Diagrama de Componentes
 https://www.infoq.com/br/articles/desmistificando-spring-cloud-netflix
