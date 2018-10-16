@@ -3,7 +3,9 @@
 Projeto desenvolvido para a disciplina de Projeto Aplicado da pós graduação de Arquitetura de Software do IGTI. Com o objetivo de demostrar uma arquitetura escalavél utilizando como base a stack para construção de micro serviços da Netflix (Eureka, Zull, Hystrix), Spring Boot, Kotlin, MongoDB, Swagger e Docker. 
 
 ### Visão geral
-
+- Registro serviços
+- Chamadas Serviços
+![Diagrama de Deploy](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/visao_geral_chamada_api.png)
 ### Requisitos não-funcionais
 ### Mecanismos arquiteturais
 ### Fundamentação
