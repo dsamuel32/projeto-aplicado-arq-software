@@ -1,21 +1,18 @@
 ### Projeto Aplicado (Em Costrução)
 
-Projeto desenvolvido para a disciplina de Projeto Aplicado da pós graduação de Arquitetura de Software do IGTI. 
+Projeto desenvolvido para a disciplina de Projeto Aplicado da pós graduação de Arquitetura de Software do IGTI. Com o objetivo de demostrar uma arquitetura escalavél utilizando como base a stack para construção de micro serviços da Netflix (Eureka, Zull, Hystrix), Spring Boot, Kotlin, MongoDB, Swagger e Docker. 
 
-### Objetivo
+### Visão geral
 
-Demostrar uma arquitetura escalavél de micro serviços utilizando:
-- Eureka
-- Zull
-- Hystrix
-- Spring Boot
-- Kotlin
-- MongoDB
-- Swagger
-- Docker
+### Requisitos não-funcionais
+### Mecanismos arquiteturais
+### Fundamentação
+### Visão de caso de uso
+### Componentes
+https://www.infoq.com/br/articles/desmistificando-spring-cloud-netflix
+### Implantacao
 
-### Primeiros passos
- - Criar network dos containers
+- Criar network dos containers
 
 ```
 docker create network projeto-aplicado
@@ -38,8 +35,7 @@ build.sh
 build.sh
 ```
 
-### Visão geral
-### Diagrama de Deploy
+- Diagrama de Deploy
 ![Diagrama de Deploy](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/deploy.jpg)
-### Diagrama de Componentes
-https://www.infoq.com/br/articles/desmistificando-spring-cloud-netflix
+
+
