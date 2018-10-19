@@ -2,7 +2,7 @@ http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-sof
 https://www.infoq.com/br/articles/desmistificando-spring-cloud-netflix
 ### Arquiteura Projeto Aplicado IGTI (Em Costrução)
 
-Projeto desenvolvido para a disciplina de Projeto Aplicado da pós graduação de Arquitetura de Software do IGTI. Com o objetivo de demostrar uma arquitetura escalavél utilizando como base a stack para construção de micro serviços da Netflix (Eureka, Zull, Hystrix), Spring Boot, Kotlin, MongoDB, Swagger e Docker. 
+Projeto desenvolvido para a disciplina de Projeto Aplicado da pós graduação de Arquitetura de Software do IGTI. Com o objetivo de demostrar uma arquitetura escalavél utilizando Spring Boot, Spring Security, Spring Data, Spring Cloud (Eureka, Zull), Kotlin, MongoDB, Swagger e Docker. 
 
 ### Visão geral
 
@@ -83,6 +83,7 @@ build.sh
 ```
 
 - Diagrama de Deploy
+
 ![Diagrama de Deploy](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/deploy.jpg)
 
 
