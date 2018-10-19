@@ -28,11 +28,36 @@ Zoom                 |Api de video responsável por gerar uma sala de aula e con
 Back-end             |Camada responsável por implementar as regras de negócio do sistema                            | Spring Boot/Kotlin/Spring Cloud/Rest
 Front-end            |Camada resposável em disponibilizar meio do usuário interagir com o sistema                   | ReactJS
 Swagger              |Framework responsável por criar a documentação referente aos endpoints das APIs Rest          | -  
+
 ### Fundamentação
+
+Nesta seção será apresentado as APIs necessárias para a construção do sistema frameworks, tecnologias utilizadas e as integrações com sistemas de terceiros.
+
+- APIs
+    - Cadastro Aluno/Professor: Serviço responsável por manter os cadastros dos usuários (alunos/professores).
+    - Notificação: Serviço responsável por enviar notificações aos usuários. Ex: Quando um aluno agendar uma aula.
+    - Pagamento: Serviço responsável por controlar o pagamento das aulas e se integrar com o sistema de pagamentos da Braspag.
+    - Agendamento: Serviço responsável por disponibilizar ao professor a forma de cadastrar aulas e que o aluno agende e se integre com a API do Zoom.
+    - Relatório: Serviço responsável por disponibilizar relatórios aos usuários.
+
+- Frameworks/Tecnologia
+    - Spring Boot: Framework que permite a construção de aplicações stand-alone baseadas no framework Spring de forma fácil e rápida, pois já vem com Embed Tomcat, Jetty or Undertow embarcados (sem necessidade de gerar um arquivo WAR) e não existe a necessidade de efetuar muitas configurações.  
+    - Spring Security: Framework consolidado no mercado focado em autenticação e autorização de usuários em aplicações Java, altamente customizado.
+    - Spring Cloud: Framework prove ferramentas para um rápido desenvolvimento de aplicações distribuídas com os principais padrões de mercado (configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus, one-time tokens, global locks, leadership election, distributed sessions, cluster state).
+    - Spring Data: Framework prove um fácil acesso a dados com diversas tecnologias com bancos relacionais e NOSQL alem de diponibilzar formas de acesso através de ORM.
+    - ReactJS: Framework para construção de componentes web baseado em Javascrit, com uma grande aceitação pela comunidade e de fácil compreenssão.
+    - Kotlin: Linguagem de programação orientada a objetos e com uma pegada funcional, executada na JVM, reduz extremamente o boilerplate de códigos, além de ser totalmente compativél com bibliotecas Java.
+    
+- APIs de Terceiros
+    - Zoom: API para criação de uma sala virtual onde acontecerá a interação entre professor e aluno. Escolhida nesse primeiro momento pelo fato de transmissão de vídeo ser algo complexo e por nos disponibilizar todos os recursos necessários para atender bem tanto aluno como professor. 
+    - Braspag: API de pagamento da Cielo escolhida por ser de uma empresa forte no mercado de pagamento e por ser simples de efetuar a integração.
+
 ### Visão de caso de uso
 ### Componentes
 
 ### Implantação
+
+O sistema será implantado em um ambiente em nuvem da AWS, onde cada micro serviço vai ser executado em um container Docker. Segue abaixo o passo a passo para build das aplicações.
 
 - Criar network dos containers
 
