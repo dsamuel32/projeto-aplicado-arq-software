@@ -1,22 +1,45 @@
 http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx
 https://www.infoq.com/br/articles/desmistificando-spring-cloud-netflix
+https://github.com/italopaiva/SiMCTA/wiki/Documento-de-arquitetura
 ### Arquiteura Projeto Aplicado IGTI (Em Costrução) ![Status Build Travis](https://travis-ci.org/dsamuel32/projeto-aplicado-arq-software.svg?branch=master)
 
+### 1 - Introdução
 
 Projeto desenvolvido para a disciplina de Projeto Aplicado da pós graduação de Arquitetura de Software do IGTI. Com o objetivo de demostrar uma arquitetura escalavél utilizando Spring Boot, Spring Security, Spring Data, Spring Cloud (Eureka, Zull), Kotlin, MongoDB, Swagger e Docker. 
 
-### Visão geral
+### 2 - Visão geral
 
-- Registro serviços Eureka
+Nesta seção será apresentado como os componentes da aquitetura e como esses componentes serão organizado internamente.
+
+**2.1 - Registro serviços Eureka**
+
+A imagem abaixo demostra como os serviços vão ser registrados no módulo de discovery service (Eureka).
 
 ![Diagrama de Deploy](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/visao_geral_registro_eureka.png)
 
-- Chamadas Serviços
+**2.2 - Chamadas Serviços**
+
+A imagem abaixo mostra como os serviços vão se comunicar via api gateway (Zull).
 
 ![Diagrama de Deploy](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/visao_geral_chamada_api.png)
 
-### Requisitos não-funcionais
-### Mecanismos arquiteturais
+**2.3 - Organização Interna dos Micro Serviços**
+
+Cada micro serviço será composto pelas seguintes camadas Model, View, Controller e DAO.
+
+A camada Model é responsável por estabelecer o domínio da aplicação na solução proposta, inerentes ao contexto. Ela se comunica diretamente apenas com as camadas Controller e DAO.
+
+A camada Controller é responsável por processar as informações provenientes da View, ou seja, informações solicitadas pelo usuário, controlando o fluxo da aplicação e utilizando ou alterando dados da Model. Essa camada também estabelece comunicação com o banco de dados por intermédio da camada DAO.
+
+Dessa forma, a camada DAO (Data Access Object) é responsável por realizar a persistência no banco de dados.
+
+Na imagem abaixo pode ser vista a estrutura de comunicação estabelecida entre as camadas.
+
+![Imagem MVC](https://github.com/dsamuel32/projeto-aplicado-arq-software/blob/master/documentos/mvc.png)
+
+### 3 -Requisitos não-funcionais
+
+### 4 -Mecanismos arquiteturais
 
 MECANISMO DE ANÁLISE | MECANISMO DE DESIGN                                                                          | MECANISMO DE IMPLEMENTAÇÃO
 :-------------------:|:--------------------------------------------------------------------------------------------:|:--------------------------:
@@ -33,7 +56,7 @@ Integração continua  |Verificação para garantir que o sistema esteja sempre 
 Deploy               |Configuração do deploy automatizado                                                           | Jenkins
 
 
-### Fundamentação
+### 5 - Fundamentação
 
 Nesta seção será apresentado as APIs necessárias para a construção do sistema frameworks, tecnologias utilizadas e as integrações com sistemas de terceiros.
 
@@ -56,10 +79,10 @@ Nesta seção será apresentado as APIs necessárias para a construção do sist
     - Zoom: API para criação de uma sala virtual onde acontecerá a interação entre professor e aluno. Escolhida nesse primeiro momento pelo fato de transmissão de vídeo ser algo complexo e por nos disponibilizar todos os recursos necessários para atender bem tanto aluno como professor. 
     - Braspag: API de pagamento da Cielo escolhida por ser de uma empresa forte no mercado de pagamento e por ser simples de efetuar a integração.
 
-### Visão de caso de uso
-### Componentes
+### 6 - Visão de caso de uso
+### 7 - Componentes
 
-### Implantação
+### 8 - Implantação
 
 O sistema será implantado em um ambiente em nuvem da AWS, onde cada micro serviço vai ser executado em um container Docker. Segue abaixo o passo a passo para build das aplicações.
 
