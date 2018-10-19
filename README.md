@@ -28,6 +28,9 @@ Zoom                 |Api de video responsável por gerar uma sala de aula e con
 Back-end             |Camada responsável por implementar as regras de negócio do sistema                            | Spring Boot/Kotlin/Spring Cloud/Rest
 Front-end            |Camada resposável em disponibilizar meio do usuário interagir com o sistema                   | ReactJS
 Swagger              |Framework responsável por criar a documentação referente aos endpoints das APIs Rest          | -  
+Integração continua  |Verificação para garantir que o sistema esteja sempre com o build em perfeitas condições      | Travis
+Deploy               |Configuração do deploy automatizado                                                           | Jenkins
+
 
 ### Fundamentação
 
