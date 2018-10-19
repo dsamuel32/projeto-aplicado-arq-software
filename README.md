@@ -77,7 +77,7 @@ Nesta seção será apresentado as APIs necessárias para a construção do sist
     
 - APIs de Terceiros
     - Zoom: API para criação de uma sala virtual onde acontecerá a interação entre professor e aluno. Escolhida nesse primeiro momento pelo fato de transmissão de vídeo ser algo complexo e por nos disponibilizar todos os recursos necessários para atender bem tanto aluno como professor. 
-    - Braspag: API de pagamento da Cielo escolhida por ser de uma empresa forte no mercado de pagamento e por ser simples de efetuar a integração.
+    - Braspag: API de pagamento da Cielo escolhida por ser de uma empresa forte no mercado de pagamento e disponibilizar varias formas de integração (Rest/SOAP).
 
 ### 6 - Visão de caso de uso
 ### 7 - Componentes
