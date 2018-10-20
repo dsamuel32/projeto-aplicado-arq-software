@@ -1,9 +1,12 @@
 #!/bin/bash
 cd agendamento
-docker build -t projeto-aplicado-agendamentodb .
+call docker build -t agendamentodb .
 cd ..
 cd cadastro
-docker build -t projeto-aplicado-cadastrodb .
+call docker build -t cadastrodb .
 cd ..
 cd notificacao
-docker build -t projeto-aplicado-notificacaodb .
+cd ..
+call docker build -t notificacaodb .
+cd pagamento
+call docker build -t pagamentodb .

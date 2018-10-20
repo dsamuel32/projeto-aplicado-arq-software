@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-notificacao-service:
-    container_name: projeto-aplicado-notificacao-service
-    image: projeto-aplicado-notificacao-service
+  notificacao:
+    container_name: notificacao
+    image: notificacao
     build: .
     ports:
       - "8085:8085"

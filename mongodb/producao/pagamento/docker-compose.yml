@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-pagamentodb:
-    container_name: projeto-aplicado-pagamentodb
-    image: projeto-aplicado-pagamentodb
+  pagamentodb:
+    container_name: pagamentodb
+    image: pagamentodb
     build: .
     ports:
       - "27017:27017"

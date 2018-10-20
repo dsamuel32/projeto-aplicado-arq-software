@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-relatorio-service:
-    container_name: projeto-aplicado-relatorio-service
-    image: projeto-aplicado-relatorio-service
+  relatorio:
+    container_name: relatorio
+    image: relatorio
     build: .
     ports:
       - "8087:8087"

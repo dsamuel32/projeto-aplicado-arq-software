@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-api-gateway:
-    container_name: projeto-aplicado-api-gateway
-    image: projeto-aplicado-api-gateway
+  api-gateway:
+    container_name: api-gateway
+    image: api-gateway
     build: .
     ports:
       - "8080:8080"

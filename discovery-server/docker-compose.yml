@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-discovery-server:
-    container_name: projeto-aplicado-discovery-server
-    image: projeto-aplicado-discovery-server
+  registry-discovery:
+    container_name: registry-discovery
+    image: registry-discovery
     build: .
     ports:
       - "8081:8081"

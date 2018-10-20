@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-notificacaodb:
-    container_name: projeto-aplicado-notificacaodb
-    image: projeto-aplicado-notificacaodb
+  notificacaodb:
+    container_name: notificacaodb
+    image: notificacaodb
     build: .
     ports:
       - "27017:27017"

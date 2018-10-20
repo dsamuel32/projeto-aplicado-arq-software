@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-agendamento-service:
-    container_name: projeto-aplicado-agendamento-service
-    image: projeto-aplicado-agendamento-service
+  agendamento:
+    container_name: agendamento
+    image: agendamento
     build: .
     ports:
       - "8084:8084"

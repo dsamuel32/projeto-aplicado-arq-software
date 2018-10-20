@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-cadastrodb:
-    container_name: projeto-aplicado-cadastrodb
-    image: projeto-aplicado-cadastrodb
+  cadastrodb:
+    container_name: cadastrodb
+    image: cadastrodb
     build: .
     ports:
       - "27017:27017"

@@ -1,9 +1,9 @@
 version: '2'
 services:
 
-  projeto-aplicado-pagamento-service:
-    container_name: projeto-aplicado-pagamento-service
-    image: projeto-aplicado-pagamento-service
+  pagamento:
+    container_name: pagamento
+    image: pagamento
     build: .
     ports:
       - "8086:8086"
