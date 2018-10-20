@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-notificacaodb:
+    container_name: projeto-aplicado-notificacaodb
+    image: projeto-aplicado-notificacaodb
+    build: .
+    ports:
+      - "27017:27017"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"

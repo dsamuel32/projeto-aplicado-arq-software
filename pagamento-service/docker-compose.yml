@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  projeto-aplicado-pagamento-service:
+    container_name: projeto-aplicado-pagamento-service
+    image: projeto-aplicado-pagamento-service
+    build: .
+    ports:
+      - "8086:8086"
+#    volumes:
+#    - ./config:/config
+    network_mode: "projeto-aplicado"
