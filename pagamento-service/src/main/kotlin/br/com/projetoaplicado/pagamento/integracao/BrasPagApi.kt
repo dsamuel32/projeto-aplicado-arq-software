@@ -35,7 +35,12 @@ class BrasPagApi {
 
         val cartao = pagamento.cartao
         var custumer = Custumer(pagamento.idAluno as String)
-        var creditCard = CreditCard(cartao?.numero as Long, cartao?.nome as String, cartao?.vencimento as String, cartao.codigoSeguranca as Int, cartao.bandeira as String)
+        var creditCard = CreditCard(
+                cartao?.numero as Long,
+                cartao?.nome as String,
+                cartao?.vencimento as String,
+                cartao.codigoSeguranca as Int,
+                cartao.bandeira as String)
         var payment = Payment(Provider = "Simulado", Type = "CreditCard", Amount = pagamento?.valor as Double, CreditCard = creditCard)
         val brasPagCartao = BrasPagCartao(pagamento.idAgendamento as String, custumer, payment)
         val httpHeaders = requestUtil.createHeader(mapOf("MerchantId" to merchantId, "MerchantKey" to merchantKey))
