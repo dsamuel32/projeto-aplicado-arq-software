@@ -1,0 +1,7 @@
+{
+	"idade": 21,
+	"interesses": [{"id": "5b85f7486888f3262085f3f1", "descricao": "Matematica"}, {"id": "5b85f7c96888f3262085f3f2", "descricao": "Portugues"}],
+	"nome": "Diego",
+	"sobrenome": "Alves",
+	"email": "diego.samuel.alves@gmail.com"
+}
