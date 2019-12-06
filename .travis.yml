@@ -1,6 +1,6 @@
 language: java
 sudo: required
 jdk:
-  - oraclejdk8
+  - oraclejdk11
 notifications:
   - emails: false
