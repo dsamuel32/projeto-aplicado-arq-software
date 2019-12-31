@@ -7,7 +7,6 @@ import br.com.projetoaplicado.pagamento.dominio.braspag.Custumer
 import br.com.projetoaplicado.pagamento.dominio.braspag.CreditCard
 import br.com.projetoaplicado.pagamento.dominio.braspag.Payment
 import br.com.projetoaplicado.pagamento.exception.PagamentoException
-import org.omg.CORBA.Object
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
