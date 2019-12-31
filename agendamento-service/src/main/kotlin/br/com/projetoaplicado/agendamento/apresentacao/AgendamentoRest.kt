@@ -2,7 +2,6 @@ package br.com.projetoaplicado.agendamento.apresentacao
 
 import br.com.projetoaplicado.agendamento.dominio.Agendamento
 import br.com.projetoaplicado.agendamento.servico.AgendamentoService
-import org.omg.CORBA.Object
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
